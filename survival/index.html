@@ -1,67 +1,460 @@
 <!DOCTYPE html>
-</div>
-</div>
-</div>
-<div class="grid">
-<!-- Repeat as topic cards -->
-<a class="card topic-card" data-topic="agua água potavel purificacao armazenamento tratamento cdc who" href="topics/agua.html">
-<h3>Água</h3>
-<p>Captação, potabilização (fervura, cloro, filtros), armazenamento seguro e cálculo de consumo.</p>
-</a>
-<a class="card topic-card" data-topic="fogo fogueira isqueiro pederneira combustivel" href="topics/fogo.html">
-<h3>Fogo</h3>
-<p>Métodos de ignição, combustíveis, construção segura e uso para calor, cozinha e sinalização.</p>
-</a>
-<a class="card topic-card" data-topic="abrigo shelter tenda lona bivy frio calor hipotermia" href="topics/abrigo.html">
-<h3>Abrigo</h3>
-<p>Princípios de isolamento, tipos de abrigo, seleção de local e improvisação conforme terreno.</p>
-</a>
-<a class="card topic-card" data-topic="alimento comida estocagem shelf life rotacao usda fsis" href="topics/alimento.html">
-<h3>Alimento</h3>
-<p>Estoques, calorias, shelf-life, segurança alimentar sem energia e rotação inteligente.</p>
-</a>
-<a class="card topic-card" data-topic="defesa situacional autoprotecao fortificacao planos" href="topics/defesa.html">
-<h3>Defesa</h3>
-<p>Segurança doméstica, vigilância, rotas de fuga, comunicação e ética de uso mínimo da força.</p>
-</a>
-<a class="card topic-card" data-topic="equipamentos gear ferramentas facas lampadas radio" href="topics/equipamentos.html">
-<h3>Equipamentos</h3>
-<p>Ferramentas essenciais, redundância, manutenção e listas por cenário.</p>
-</a>
-<a class="card topic-card" data-topic="preparacao planejamento riscos checklist fema ready" href="topics/preparacao.html">
-<h3>Preparação</h3>
-<p>Avaliação de risco, planos familiares, checklists e exercícios.</p>
-</a>
-<a class="card topic-card" data-topic="tecnicas sobrevivencia navegação sinalização primeiros socorros" href="topics/tecnicas.html">
-<h3>Técnicas de Sobrevivência</h3>
-<p>Navegação, sinalização, primeiros socorros básicos, psicologia da sobrevivência.</p>
-</a>
-<a class="card topic-card" data-topic="energia solar offgrid painel bateria nrel" href="topics/energia-solar.html">
-<h3>Energia Solar</h3>
-<p>Dimensionamento básico, painéis portáteis, baterias, segurança e uso off‑grid.</p>
-</a>
-<a class="card topic-card" data-topic="bug out bag bob mochila 72h" href="topics/bug-out-bag.html">
-<h3>Bug Out Bag (BOB)</h3>
-<p>Mochila 72h, itens essenciais por ambiente, peso e modularidade.</p>
-</a>
-<a class="card topic-card" data-topic="bug out vehicle bov veiculo offroad manutencao" href="topics/bug-out-vehicle.html">
-<h3>Bug Out Vehicle (BOV)</h3>
-<p>Preparação veicular, autonomia, manutenção, redundâncias e kits automobilísticos.</p>
-</a>
-<a class="card topic-card" data-topic="bug out location bol local seguro criterios" href="topics/bug-out-location.html">
-<h3>Bug Out Location (BOL)</h3>
-<p>Critérios de escolha, logística, segurança, água e produção local.</p>
-</a>
-<a class="card topic-card" data-topic="edc everyday carry bolso chaveiro organizacao" href="topics/edc.html">
-<h3>EDC (Everyday Carry)</h3>
-<p>Kit diário orientado a problemas: acesso, luz, corte, fogo, primeiros socorros.</p>
-</a>
-</div>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prep Survival — Guia Único</title>
+  <meta name="description" content="Guia prático e aprofundado de sobrevivência e preparação: água, fogo, abrigo, alimento, defesa, equipamentos, preparação, técnicas, energia solar, BOB/BOV/BOL e EDC."/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg-page:#0a0b0d; --bg-card:#000000; --text:#e5e7eb; --muted:#94a3b8;
+      --accent:#00ff6a; --accent-dim:#00cc54; --accent-2:#0ea5e9; --ring:rgba(14,165,233,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg-page);color:var(--text);font-family:"Source Sans 3",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
+    a{color:var(--accent-2);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    .header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{font-family:Montserrat;font-weight:800;letter-spacing:.2px;font-size:1.25rem}
+    .badge{font-size:.75rem;color:#0f172a;background:var(--accent);padding:4px 8px;border-radius:999px;font-weight:700;white-space:nowrap}
+    .hero{position:relative;border-radius:22px;overflow:hidden;margin:16px 0 24px;padding:28px;background:radial-gradient(1200px 300px at 20% -10%, rgba(14,165,233,.15), transparent),
+           linear-gradient(180deg,rgba(255,255,255,.03),rgba(0,0,0,.35));border:1px solid rgba(148,163,184,.15)}
+    .hero h1{margin:0 0 8px;font-family:Montserrat;font-weight:800;font-size:2rem}
+    .hero p{margin:0;color:#cbd5e1}
+    .searchbar{display:flex;gap:8px;align-items:center;margin-top:14px}
+    .input{padding:10px 12px;border-radius:10px;border:1px solid rgba(148,163,184,.25);background:#0f1115;color:var(--text);min-width:260px}
+    .kbd{background:#111827;border:1px solid rgba(148,163,184,.2);border-bottom-width:3px;border-radius:8px;padding:2px 6px;font-family:ui-monospace,monospace}
 
+    /* Cards do catálogo (sumário clicável) */
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(0,0,0,.3));border:1px solid rgba(148,163,184,.15);border-radius:18px;padding:18px;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:.2s}
+    .card:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(0,0,0,.35)}
+    .topic-card h3{margin:.4rem 0 .2rem;font-family:Montserrat;font-weight:800;font-size:1.05rem}
+    .topic-card p{margin:.2rem 0;color:var(--muted);font-size:.9rem}
 
-<div class="footer">© BunQr Studios — Design inspirado na landing do BunQr. Substitua <code>assets/background.png</code> pela sua imagem.</div>
-</div>
-<script src="assets/script.js"></script>
-<script>window.addEventListener('keydown',e=>{if(e.key==='/'){document.querySelector('#q')?.focus();e.preventDefault();}})</script>
+    /* Cortinas (accordions) */
+    .section{margin-top:22px}
+    .curtain{border:1px solid rgba(148,163,184,.2);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.02)}
+    .curtain summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;font-weight:800;font-family:Montserrat;background:rgba(148,163,184,.08)}
+    .curtain summary::-webkit-details-marker{display:none}
+    .curtain .chev{transition:transform .2s ease}
+    details[open] .chev{transform:rotate(90deg)}
+    /* animação suave da cortina */
+    .curtain .content{max-height:0;overflow:hidden;transition:max-height .35s ease}
+    details[open] .content{max-height:3000px}
+    .prose{padding:12px 16px}
+    .prose h3{font-family:Montserrat;font-weight:800;margin:1rem 0 .25rem}
+    .prose p{line-height:1.6}
+    .prose ul{line-height:1.6;margin:.4rem 0 .8rem 1.1rem}
+    .callout{border-left:4px solid var(--accent);background:rgba(0,255,106,.06);padding:10px 12px;border-radius:12px}
+    .table{width:100%;border-collapse:collapse}
+    .table th,.table td{border:1px solid rgba(148,163,184,.2);padding:8px;text-align:left}
+    .notice{font-size:.9rem;color:#cbd5e1}
+
+    .toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .button{display:inline-block;padding:10px 14px;border:1px solid rgba(148,163,184,.25);border-radius:12px;transition:.2s;background:#0f1115;color:var(--text)}
+    .button:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
+
+    .footer{opacity:.8;color:var(--muted);font-size:.85rem;margin-top:28px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand">Prep Survival — Guia Único</div>
+      <span class="badge">BunQr Studios</span>
+    </header>
+
+    <section class="hero">
+      <h1>Catálogo de Tópicos</h1>
+      <p>Guia prático de sobrevivência e preparação (água, fogo, abrigo, alimentação, defesa, energia, BOB/BOV/BOL, EDC e mais).</p>
+      <div class="searchbar">
+        <input id="q" class="input" placeholder="Pesquisar tópicos... (atalho: /)"/>
+        <div class="toolbar">
+          <button class="button" id="expandAll">Expandir tudo</button>
+          <button class="button" id="collapseAll">Recolher tudo</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATÁLOGO (cards que rolam até a seção e abrem a cortina) -->
+    <section class="grid" id="catalogo">
+      <a class="card topic-card" data-topic="agua água potavel purificacao armazenamento tratamento cdc who" href="#agua" data-open>
+        <h3>Água</h3>
+        <p>Captação, potabilização (fervura, cloro, filtros), armazenamento e consumo.</p>
+      </a>
+      <a class="card topic-card" data-topic="fogo fogueira isqueiro pederneira combustivel" href="#fogo" data-open>
+        <h3>Fogo</h3>
+        <p>Métodos de ignição, estruturas, combustíveis e segurança.</p>
+      </a>
+      <a class="card topic-card" data-topic="abrigo shelter tenda lona bivy hipotermia" href="#abrigo" data-open>
+        <h3>Abrigo</h3>
+        <p>Controle térmico, tipos de abrigo e escolha de local.</p>
+      </a>
+      <a class="card topic-card" data-topic="alimento comida estocagem shelf life rotacao usda fsis" href="#alimento" data-open>
+        <h3>Alimento</h3>
+        <p>Estoques, calorias, shelf‑life e segurança sem energia.</p>
+      </a>
+      <a class="card topic-card" data-topic="defesa situacional autoprotecao fortificacao planos" href="#defesa" data-open>
+        <h3>Defesa</h3>
+        <p>Camadas de segurança, fortificação e comunicação.</p>
+      </a>
+      <a class="card topic-card" data-topic="equipamentos gear ferramentas facas lampadas radio" href="#equipamentos" data-open>
+        <h3>Equipamentos</h3>
+        <p>Ferramentas essenciais, redundância e manutenção.</p>
+      </a>
+      <a class="card topic-card" data-topic="preparacao planejamento riscos checklist fema ready" href="#preparacao" data-open>
+        <h3>Preparação</h3>
+        <p>Plano familiar, exercícios e checklists.</p>
+      </a>
+      <a class="card topic-card" data-topic="tecnicas sobrevivencia navegacao sinalizacao primeiros socorros" href="#tecnicas" data-open>
+        <h3>Técnicas de Sobrevivência</h3>
+        <p>Navegação, sinalização e primeiros socorros básicos.</p>
+      </a>
+      <a class="card topic-card" data-topic="energia solar offgrid painel bateria nrel" href="#energia-solar" data-open>
+        <h3>Energia Solar</h3>
+        <p>Dimensionamento portátil, baterias e segurança elétrica.</p>
+      </a>
+      <a class="card topic-card" data-topic="bug out bag bob mochila 72h" href="#bob" data-open>
+        <h3>Bug Out Bag (BOB)</h3>
+        <p>Mochila 72h, módulos e peso alvo.</p>
+      </a>
+      <a class="card topic-card" data-topic="bug out vehicle bov veiculo offroad manutencao" href="#bov" data-open>
+        <h3>Bug Out Vehicle (BOV)</h3>
+        <p>Mobilidade, autonomia e kits automotivos.</p>
+      </a>
+      <a class="card topic-card" data-topic="bug out location bol local seguro criterios" href="#bol" data-open>
+        <h3>Bug Out Location (BOL)</h3>
+        <p>Critérios, logística, segurança e água local.</p>
+      </a>
+      <a class="card topic-card" data-topic="edc everyday carry bolso chaveiro organizacao" href="#edc" data-open>
+        <h3>EDC (Everyday Carry)</h3>
+        <p>Funções diárias: luz, corte, fogo, primeiros socorros.</p>
+      </a>
+    </section>
+
+    <!-- SEÇÕES COM CORTINAS -->
+    <section class="section" id="agua">
+      <details class="curtain">
+        <summary><span>Água</span><span class="chev">▶</span></summary>
+        <div class="content">
+          <div class="prose">
+            <h3>Princípios</h3>
+            <p>Planeje <strong>~3–4 L por pessoa/dia</strong> (consumo, preparo e higiene). Diretrizes populares usam <strong>1 galão ≈ 3,78 L</strong> p.p./dia para curtos períodos (72h+).</p>
+            <div class="callout"><strong>Regra prática:</strong> 3 dias é o mínimo; <em>2 semanas</em> é a meta doméstica.</div>
+            <h3>Captação & Tratamento</h3>
+            <ul>
+              <li><strong>Fervura:</strong> ebulição vigorosa por 1 min (≥3.000 m: 3 min); não remove químicos/metais.</li>
+              <li><strong>Cloração (2–2,5%):</strong> 2 gotas/L; aguarde 30 min; pré‑filtre água turva.</li>
+              <li><strong>Filtros 0,1–0,2 µm:</strong> eficazes para protozoários/bactérias; combine com químico/UV para vírus.</li>
+              <li><strong>UV portátil:</strong> inativa patógenos em água clara conforme instruções do fabricante.</li>
+            </ul>
+            <h3>Armazenamento</h3>
+            <ul>
+              <li>Recipientes <em>grau alimentício</em>, opacos ou em local escuro/fresco; rotule e gire a cada 6–12 meses.</li>
+            </ul>
+            <h3>Fontes</h3>
+            <ul>
+              <li>CDC — <a href="https://www.cdc.gov/water-emergency/about/how-to-create-and-store-an-emergency-water-supply.html" target="_blank" rel="noopener">Água de emergência</a></li>
+              <li>WHO — <a href="https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health/water-safety-and-quality/drinking-water-quality-guidelines" target="_blank" rel="noopener">Diretrizes potáveis</a></li>
+              <li>Ready.gov — <a href="https://www.ready.gov/kit" target="_blank" rel="noopener">Emergency Kit</a></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="section" id="fogo">
+      <details class="curtain"><summary><span>Fogo</span><span class="chev">▶</span></summary>
+        <div class="content"><div class="prose">
+          <h3>Métodos de ignição</h3>
+          <ul>
+            <li>Modernos: isqueiros, ferrocerium (pederneira), fósforos impermeáveis.</li>
+            <li>Mecânicos: pederneira + aço; atrito (arco/mão).</li>
+            <li>Ópticos: lupa/espelho sob sol forte.</li>
+          </ul>
+          <h3>Conjunto & estruturas</h3>
+          <ul>
+            <li>Isca (<em>tinder</em>): algodão com vaselina, fiapos, palha de aço.</li>
+            <li>Kindling: gravetos secos; depois galhos maiores.</li>
+            <li>Estruturas: tipi, cabana, long‑fire, Dakota fire hole.</li>
+          </ul>
+          <h3>Segurança</h3>
+          <ul>
+            <li>Local afastado de combustível; água/solo para extinção; controle de vento/faíscas.</li>
+          </ul>
+          <h3>Fontes</h3>
+          <ul>
+            <li>US Army FM 3‑05.70 — <a href="https://commons.wikimedia.org/wiki/File:FM_3-05.70_(FM_21-76)_Survival_-_May_2002.pdf" target="_blank" rel="noopener">Survival</a></li>
+            <li>Wiseman — <a href="https://theswissbay.ch/pdf/Books/War%20%26%20military/John%20%27lofty%27%20Wiseman%20-%20SAS%20Survival%20Handbook%2C%20Revised%20Edition_%20For%20Any%20Climate%2C%20in%20Any%20Situation-Harper%20Paperbacks%20(2009).pdf" target="_blank" rel="noopener">SAS Survival Handbook</a></li>
+          </ul>
+        </div></div>
+      </details>
+    </section>
+
+    <section class="section" id="abrigo">
+      <details class="curtain"><summary><span>Abrigo</span><span class="chev">▶</span></summary>
+        <div class="content"><div class="prose">
+          <h3>Controle térmico</h3>
+          <p>Priorize proteção contra frio/vento/chuva ou calor extremo. Evite exposição prolongada.</p>
+          <h3>Tipos</h3>
+          <ul>
+            <li>Lona/tarpa (A‑frame, lean‑to, plow‑point)</li>
+            <li>Tenda/bivy (ventilação evita condensação)</li>
+            <li>Improvisados (debris hut, neve/quinzee)</li>
+          </ul>
+          <h3>Localização</h3>
+          <ul>
+            <li>Superfície seca e elevada; evite valas de enxurrada e galhos mortos suspensos.</li>
+          </ul>
+          <h3>Fontes</h3>
+          <ul>
+            <li>FM 3‑05.70 — <a href="https://commons.wikimedia.org/wiki/File:FM_3-05.70_(FM_21-76)_Survival_-_May_2002.pdf" target="_blank" rel="noopener">Survival</a></li>
+            <li>Sphere — <a href="https://spherestandards.org/handbook/" target="_blank" rel="noopener">Padrões mínimos (Abrigo)</a></li>
+          </ul>
+        </div></div>
+      </details>
+    </section>
+
+    <section class="section" id="alimento">
+      <details class="curtain"><summary><span>Alimento</span><span class="chev">▶</span></summary>
+        <div class="content"><div class="prose">
+          <h3>Planejamento</h3>
+          <ul>
+            <li>Mínimo 3 dias; preferível 2 semanas por pessoa.</li>
+            <li>2.000–3.000 kcal/dia adulto, ajuste por clima/atividade.</li>
+          </ul>
+          <h3>Sem energia elétrica</h3>
+          <ul>
+            <li>Geladeira fechada; observe tempos de segurança.</li>
+            <li>Fogareiros a gás com ventilação (evite CO).</li>
+          </ul>
+          <h3>Fontes</h3>
+          <ul>
+            <li>USDA/FSIS — <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/keeping-food-safe-during" target="_blank" rel="noopener">Alimentos em emergências</a></li>
+            <li>Ready.gov — <a href="https://www.ready.gov/sites/default/files/2021-02/ready_checklist.pdf" target="_blank" rel="noopener">Checklist</a></li>
+            <li>American Red Cross — <a href="https://www.redcross.org/get-help/how-to-prepare-for-emergencies/survival-kit-supplies.html" target="_blank" rel="noopener">Kit</a></li>
+          </ul>
+        </div></div>
+      </details>
+    </section>
+
+    <section class="section" id="defesa">
+      <details class="curtain"><summary><span>Defesa</span><span class="chev">▶</span></summary>
+        <div class="content"><div class="prose">
+          <h3>Camadas</h3>
+          <ul>
+            <li>Prevenção/observação (iluminação, visibilidade, vizinhança)</li>
+            <li>Fortificação proporcional (portas, fechaduras, trincos, filme)</li>
+            <li>Procedimentos (senhas familiares, check‑ins, rotas)</li>
+            <li>Comunicação (celular, rádio FRS/GMRS/PMR, apito/espelho)</li>
+          </ul>
+          <p class="notice">Respeite as leis locais. Priorize desescalada e evasão.</p>
+          <h3>Fontes</h3>
+          <ul>
+            <li>FM 3‑05.70 — <a href="https://commons.wikimedia.org/wiki/File:FM_3-05.70_(FM_21-76)_Survival_-_May_2002.pdf" target="_blank" rel="noopener">Survival</a></li>
+            <li>American Red Cross — <a href="https://www.redcross.org/content/dam/redcross/atg/Chapters/Division_1_-_Media/Denver/Denver_-_PDFs/EmergencyPreparednessChecklist.pdf" target="_blank" rel="noopener">Checklist</a></li>
+          </ul>
+        </div></div>
+      </details>
+    </section>
+
+    <section class="section" id="equipamentos">
+      <details class="curtain"><summary><span>Equipamentos</span><span class="chev">▶</span></summary>
+        <div class="content"><div class="prose">
+          <h3>Princípios</h3>
+          <ul>
+            <li>2 (ou 3) é 1: redundância para água, fogo, luz.</li>
+            <li>Modularidade: EDC → BOB → BOV/BOL.</li>
+            <li>Manutenção: inspeções, baterias datadas e carregadas.</li>
+          </ul>
+          <h3>Listas base</h3>
+          <ul>
+            <li>Luz (lanterna + headlamp), corte (canivete, serra, multitool), hidratação (filtro + química), fogo (pederneira + isqueiro), navegação (mapa/bússola), comms (apito, espelho, rádio), kit primeiros socorros.</li>
+          </ul>
+          <h3>Fonte</h3>
+          <ul><li>FM 3‑05.70 — <a href="https://commons.wikimedia.org/wiki/File:FM_3-05.70_(FM_21-76)_Survival_-_May_2002.pdf" target="_blank" rel="noopener">Survival</a></li></ul>
+        </div></div>
+      </details>
+    </section>
+
+    <section class="section" id="preparacao">
+      <details class="curtain"><summary><span>Preparação</span><span class="chev">▶</span></summary>
+        <div class="content"><div class="prose">
+          <h3>Plano familiar</h3>
+          <ul>
+            <li>Contatos (inclusive fora da cidade); pontos de encontro; rotas alternativas.</li>
+            <li>Treinos semestrais: evacuação, desligamentos (água/gás/energia), uso de extintor.</li>
+          </ul>
+          <h3>Checklists</h3>
+          <ul>
+            <li>FEMA — <a href="https://www.fema.gov/pdf/areyouready/appendix_b.pdf" target="_blank" rel="noopener">Disaster Supplies</a></li>
+            <li>Ready.gov — <a href="https://www.ready.gov/kit" target="_blank" rel="noopener">Build a Kit</a></li>
+            <li>Cruz Vermelha — <a href="https://www.redcross.org/content/dam/redcross/atg/Chapters/Division_1_-_Media/Denver/Denver_-_PDFs/EmergencyPreparednessChecklist.pdf" target="_blank" rel="noopener">Checklist</a></li>
+          </ul>
+        </div></div>
+      </details>
+    </section>
+
+    <section class="section" id="tecnicas">
+      <details class="curtain"><summary><span>Técnicas de Sobrevivência</span><span class="chev">▶</span></summary>
+        <div class="content"><div class="prose">
+          <h3>Navegação</h3>
+          <ul>
+            <li>Bússola: azimute, rumo inverso, declinação magnética local.</li>
+            <li>Mapa topográfico: curvas de nível, bacias e cristas.</li>
+            <li>Navegação de contingência: sol/sombra, estrelas (ajustes Hemisfério Sul).</li>
+          </ul>
+          <h3>Sinalização</h3>
+          <ul>
+            <li>Três sinais repetidos (apito, luz, fumaça) = socorro.</li>
+            <li>Espelho de sinalização; marcação em solo contrastante.</li>
+          </ul>
+          <h3>Primeiros socorros (noções)</h3>
+          <ul>
+            <li>Sangramento: pressão direta; torniquete quando indicado.</li>
+            <li>Hipo/hipertermia: reconhecer e manejar inicialmente.</li>
+            <li>Higiene e potabilidade para prevenir diarreias.</li>
+          </ul>
+          <h3>Fontes</h3>
+          <ul>
+            <li>FM 3‑05.70 — <a href="https://commons.wikimedia.org/wiki/File:FM_3-05.70_(FM_21-76)_Survival_-_May_2002.pdf" target="_blank" rel="noopener">Survival</a></li>
+            <li>Wiseman — <a href="https://theswissbay.ch/pdf/Books/War%20%26%20military/John%20%27lofty%27%20Wiseman%20-%20SAS%20Survival%20Handbook%2C%20Revised%20Edition_%20For%20Any%20Climate%2C%20in%20Any%20Situation-Harper%20Paperbacks%20(2009).pdf" target="_blank" rel="noopener">SAS Survival Handbook</a></li>
+          </ul>
+        </div></div>
+      </details>
+    </section>
+
+    <section class="section" id="energia-solar">
+      <details class="curtain"><summary><span>Energia Solar</span><span class="chev">▶</span></summary>
+        <div class="content"><div class="prose">
+          <h3>Dimensionamento rápido (12V portátil)</h3>
+          <ul>
+            <li>Some as cargas (W×h) ⇒ Wh/dia. Ex.: rádio 5W×4h=20Wh; celular 10Wh; total ≈ 30–40Wh/dia.</li>
+            <li><strong>Painel:</strong> +30–50% de margem ÷ HSP. Ex.: 40Wh/4h ≈ 10W ⇒ use 20–30W.</li>
+            <li><strong>Bateria:</strong> Wh ÷ 12V ⇒ Ah. 40Wh/12 ≈ 3,3Ah ⇒ use 7–10Ah.</li>
+          </ul>
+          <h3>Boas práticas</h3>
+          <ul>
+            <li>Controlador PWM/MPPT, fusíveis e bitolas corretas; ventilação de baterias.</li>
+          </ul>
+          <h3>Fontes</h3>
+          <ul>
+            <li>NREL — fundamentos solares (sistemas off‑grid/portáteis).</li>
+            <li>FM 3‑05.70 — princípios de logística/energia em campo.</li>
+          </ul>
+        </div></div>
+      </details>
+    </section>
+
+    <section class="section" id="bob">
+      <details class="curtain"><summary><span>Bug Out Bag (BOB)</span><span class="chev">▶</span></summary>
+        <div class="content"><div class="prose">
+          <h3>Modularidade 72h</h3>
+          <ul>
+            <li>Núcleo: água (filtro+química), alimento pronto, abrigo leve (lona/bivy), fogo, luz, primeiros socorros, navegação, higiene, multitool.</li>
+            <li>Módulos: clima, comunicação (rádio+baterias), energia (power bank), documentos (cópias seguras).</li>
+            <li>Peso alvo: 10–15 kg (ajuste a biotipo/terreno).</li>
+          </ul>
+          <h3>Fontes</h3>
+          <ul>
+            <li>Ready.gov — <a href="https://www.ready.gov/kit" target="_blank" rel="noopener">Emergency Kit</a></li>
+            <li>Cruz Vermelha — <a href="https://www.redcross.org/get-help/how-to-prepare-for-emergencies/survival-kit-supplies.html" target="_blank" rel="noopener">Suprimentos</a></li>
+          </ul>
+        </div></div>
+      </details>
+    </section>
+
+    <section class="section" id="bov">
+      <details class="curtain"><summary><span>Bug Out Vehicle (BOV)</span><span class="chev">▶</span></summary>
+        <div class="content"><div class="prose">
+          <h3>Princípios</h3>
+          <ul>
+            <li>Manutenção preventiva (pneus/estepe, fluídos, ferramentas).</li>
+            <li>Autonomia: combustível+galões homologados; mapas/rotas alternativas.</li>
+            <li>Kits: primeiros socorros automotivo, extintor, cabos, cinta/gancho, compressor.</li>
+          </ul>
+          <h3>Fonte</h3>
+          <ul><li>FM 3‑05.70 — logística e mobilidade (princípios).</li></ul>
+        </div></div>
+      </details>
+    </section>
+
+    <section class="section" id="bol">
+      <details class="curtain"><summary><span>Bug Out Location (BOL)</span><span class="chev">▶</span></summary>
+        <div class="content"><div class="prose">
+          <h3>Critérios</h3>
+          <ul>
+            <li>Água sustentável, acesso/rotas discretas, linhas de visão.</li>
+            <li>Capacidade produtiva (horta/animais), saneamento e resíduos.</li>
+            <li>Comunidade/protocolos de segurança.</li>
+          </ul>
+          <h3>Fonte</h3>
+          <ul>
+            <li>Sphere — <a href="https://spherestandards.org/wp-content/uploads/Sphere-Handbook-2018-EN.pdf" target="_blank" rel="noopener">Padrões mínimos</a></li>
+          </ul>
+        </div></div>
+      </details>
+    </section>
+
+    <section class="section" id="edc">
+      <details class="curtain"><summary><span>EDC (Everyday Carry)</span><span class="chev">▶</span></summary>
+        <div class="content"><div class="prose">
+          <h3>Funções, não itens</h3>
+          <ul>
+            <li>Acesso/identificação/pagamento offline</li>
+            <li>Luz, corte, ignição, primeiros socorros mínimo</li>
+            <li>Comunicação (celular + power bank), anotação, fita/cordame</li>
+          </ul>
+          <h3>Camadas</h3>
+          <ul>
+            <li>Bolso/bolsa → mochila leve → BOB no veículo</li>
+          </ul>
+          <h3>Fonte</h3>
+          <ul><li>FM 3‑05.70 — <a href="https://commons.wikimedia.org/wiki/File:FM_3-05.70_(FM_21-76)_Survival_-_May_2002.pdf" target="_blank" rel="noopener">Survival</a></li></ul>
+        </div></div>
+      </details>
+    </section>
+
+    <footer class="footer">© BunQr Studios — Guia estático em página única. Sem dependências externas além de Google Fonts.</footer>
+  </div>
+
+  <script>
+    // Foco rápido
+    window.addEventListener('keydown',e=>{ if(e.key=='/'){ const i=document.querySelector('#q'); i&&i.focus(); e.preventDefault(); } });
+
+    // Filtro do catálogo
+    const q=document.querySelector('#q');
+    q&&q.addEventListener('input',()=>{
+      const v=(q.value||'').toLowerCase();
+      document.querySelectorAll('#catalogo [data-topic]').forEach(el=>{
+        const txt=el.getAttribute('data-topic')||'';
+        el.style.display = (!v || txt.includes(v))? 'block':'none';
+      });
+    });
+
+    // Abrir cortina ao clicar no card do catálogo
+    document.querySelectorAll('#catalogo a[data-open]').forEach(card=>{
+      card.addEventListener('click',e=>{
+        const hash = card.getAttribute('href');
+        const sec = hash && document.querySelector(hash+ ' details.curtain');
+        if(sec){
+          sec.open = true;
+          setTimeout(()=>{
+            document.querySelector(hash).scrollIntoView({behavior:'smooth', block:'start'});
+          }, 10);
+        }
+      });
+    });
+
+    // Expandir / recolher tudo
+    const expandAll=document.querySelector('#expandAll');
+    const collapseAll=document.querySelector('#collapseAll');
+    const allDetails=()=>Array.from(document.querySelectorAll('details.curtain'));
+    expandAll&&expandAll.addEventListener('click',()=> allDetails().forEach(d=> d.open=true));
+    collapseAll&&collapseAll.addEventListener('click',()=> allDetails().forEach(d=> d.open=false));
+  </script>
 </body>
 </html>
